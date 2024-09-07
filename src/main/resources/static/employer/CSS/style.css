@@ -1,0 +1,1488 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style-type: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    width: 100%;
+}
+
+nav {
+    width: 270px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+@media (max-width:1000px) {
+    .navbar {
+        display: none;
+    }
+
+    
+    body .rightsection {
+        width: 100%;
+        
+    }
+
+    body .rightsection h2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    body .rightsection h2 .menubar {
+        display: block;
+        margin-left: 30px;
+        transition: all ease 0.5s;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    body .rightsection h2 .menubar:hover {
+        transform: scale(1.1);
+    }
+
+    body nav .xmark {
+        display: inline-block;
+    }
+}
+
+.navbarshow{
+    display: flex;
+}
+
+.xmark {
+    display: none;
+    margin-left: 25px;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 10px;
+}
+
+.logo {
+    width: 100%;
+    padding: 5px 10px 10px 0;
+    font-size: 30px;
+    cursor: default;
+    margin-bottom: 20px;
+}
+
+.logo strong {
+    color: rgba(84, 39, 254, 1);
+}
+
+.fixednav {
+    height: 85vh;
+    position: fixed;
+    left: 0;
+    width: 270px;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 0 25px 10px 25px;
+}
+
+ul li a{
+    padding: 10px;
+    width: 200px;
+    display: inline-block;
+    margin-bottom: 15px;
+    color: grey;
+    font-size: 18px;
+    border-radius: 5px;
+    position: relative;
+    font-weight: bolder;
+    transition: all ease 0.5s;
+}
+
+ul li a:hover {
+    scale: 0.95;
+    background-color: rgba(128, 128, 128, 0.432);
+    color: white;
+}
+
+.down {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.beside {
+    margin-right: 7px;
+}
+
+.joblistlist {
+    height: 0;
+    overflow: hidden;
+    transition: all ease 0.5s;
+}
+
+.joblistlist a{
+    margin-left: 30px;
+    width: 170px;    
+}
+
+.joblistshow {
+    height: 120px;
+}
+
+.interviewlist {
+    height: 0;
+    overflow: hidden;
+    transition: all ease 0.5s;
+}
+
+.interviewlist a{
+    margin-left: 30px;
+    width: 170px;    
+}
+
+.interviewlistshow {
+    height: 120px;
+}
+
+.userlist {
+    height: 0;
+    overflow: hidden;
+    transition: all ease 0.5s;
+}
+
+.userlist a{
+    margin-left: 30px;
+    width: 170px;    
+}
+
+.userlistshow {
+    height: 120px;
+}
+
+.override {
+    height: 120px;
+}
+
+.current {
+    background-color: rgba(86, 39, 254, 0.178);
+    color: rgba(84, 39, 254, 1);
+}
+
+.current::before {
+    position: absolute;
+    left: -15px;
+    z-index: 100;
+    top: 1px;
+    width: 5px;
+    background-color: rgba(84, 39, 254, 1);
+    height: 45px;
+    content: "";
+}
+
+
+.rightsection {
+    position: fixed;
+    width: calc(100% - 270px);
+    right: 0;
+    top: 0;
+    overflow: hidden;
+    height: 100vh;
+    height: max-content;
+}
+
+.rightsection h2 {
+    height: 80px;
+    padding-right: 30px;
+    line-height: 80px;
+    text-align: end;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    font-size: 2.3vw;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 100;
+}
+
+.rightsection h2 .menubar {
+    display: none;
+}
+
+.rightbottomsection {
+    width: 100%;
+    height: calc(100vh - 80px);
+    overflow-y: scroll;
+    background-color: rgba(233, 239, 237, 1);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    padding: 30px 10px;
+}
+
+
+
+.dashsmallbox {
+    max-width: 280px;
+    width: 280px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: all ease 0.5s;
+}
+
+.dashsmallbox:hover {
+    background-color: rgba(84, 39, 254, 1);
+    color: white;
+    scale: 0.98;
+}
+
+.dashsmallbox:hover .dashsmallright h3 {
+    color: white;  
+}
+
+.dashsmallbox:hover .dashsmallright span {
+    color: white;  
+}
+
+.dashsmallbox:hover .dashsmallleft .icon {
+    background-color: white;
+}
+
+.dashsmallbox .dashsmallleft .icon {
+    padding: 20px;
+    background-color: rgba(225, 231, 245, 1);
+    border-radius: 10px;
+    color: rgba(84, 39, 254, 1);
+    margin-left: 10px;
+    font-size: 25px;
+    
+}
+
+.dashsmallbox .dashsmallright {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.dashsmallbox .dashsmallright h3 {
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.712);
+}
+
+.dashsmallbox .dashsmallright span{
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.712);
+}
+
+.dashsmallrightest {
+    margin-left: 40px;
+}
+
+
+/* Add job section starts here. */
+
+.rightbottomsmallsection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.rightbottomsmallsection h3 {
+    width: 100%;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.adminform {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: wrap;
+    
+}
+
+.adminrow {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    justify-content: center;
+}
+
+.admincolumn {
+    min-width: 300px;
+    width: 45%;
+    max-width: 45%;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.admincolumn span {
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.726);
+    margin-bottom: 10px;
+}
+
+.admincolumn input, .admincolumn select {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.admincolumn input:focus, .admincolumn select:focus, .adminrow textarea:focus {
+    border: 1px solid rgb(86, 39, 254);
+}
+
+.adminrow textarea {
+    width: 100%;
+    min-width: 300px;
+    height: 150px;
+    margin: 20px 25px;
+    border: none;
+    outline: none;
+    resize: none;
+    padding: 20px;
+    font-size: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.adminrow button {
+    width: 100%;
+    min-width: 300px;
+    margin: 20px 25px;
+    padding: 12px;
+    border: none;
+    outline: none;
+    background-color:rgb(86, 39, 254);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    transition: all ease 0.5s;
+}
+
+.adminrow button:hover {
+    scale: 0.98;
+}
+
+@media (max-width: 1169px) {
+    .adminrow textarea {
+        width: 45%;
+    }
+
+    .adminrow button {
+        width: 45%;
+    }
+}
+
+/* Add job section ends here. */
+
+/* View Job section starts here. */
+
+.viewjobform {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+    align-items: center;
+    font-size: 20px;
+}
+
+.viewjobform span {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.viewjobform select {
+    padding: 5px 10px;
+    
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-right: 15px;
+    border-radius: 5px;
+}
+.viewjobform select:focus {
+    border: 1px solid rgb(86, 39, 254);
+}
+
+.viewjobform input {
+    padding: 5px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.199);
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-right: 15px;
+    border-radius: 5px;
+}
+.viewjobform input:focus {
+    border: 1px solid rgb(86, 39, 254);
+}
+
+.viewjobform button {
+    padding: 5px 10px;
+    border: 1px solid rgb(86, 39, 254);
+    outline: none;
+    background-color: rgb(86, 39, 254);
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all ease 0.5s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.viewjobform button:hover {
+    border: 1px solid rgb(86, 39, 254);
+    background-color: white;
+    color: rgb(86, 39, 254);
+}
+
+.admintable {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.admintable tr {
+    height: 60px;
+    
+    border-collapse: collapse;
+}
+
+.admintable td {
+    text-align: center;
+}
+
+.admintable a {
+    padding: 8px 15px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: all ease 0.5s;
+    border-radius: 5px;
+}
+
+.admintable a:hover {
+    background-color: rgb(86, 39, 254);
+    color: white;
+    scale: 0.95;
+}
+
+.admintable button {
+    padding: 8px 15px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: all ease 0.5s;
+    border-radius: 5px;
+    width: fit
+}
+
+.admintable button:hover {
+    background-color: rgb(86, 39, 254);
+    color: white;
+    scale: 0.95;
+}
+
+/* View Job section ends here. */
+
+/* Job detail section starts here. */
+
+.rightbottomsectionedited {
+    width: 100%;
+    height: calc(100vh - 80px);
+    overflow-y: scroll;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    z-index: -100;
+}
+
+.vacancydetailbigbox {
+    width: 100%;
+    min-width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px;
+}
+
+.vacancydetailbigbox .vacancydetailleftbox {
+    width: 65%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.vacancydetailbigbox .vacancydetailleftbox .vacancydetaillefttopbox {
+    display: flex;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.vacancydetailbigbox .vacancydetailleftbox .vacancydetaillefttopbox img {
+    width: 100px;
+    min-width: 100px;
+}
+
+.vacancydetailbigbox .vacancydetailleftbox .vacancydetaillefttopbox .vacancydetaillefttoprightbox h4 {
+    font-size: 28px;
+    letter-spacing: 1.5px;
+    margin-bottom: 5px;
+    cursor: default;
+}
+
+.vacancydetailbigbox .vacancydetailleftbox .vacancydetaillefttopbox .vacancydetaillefttoprightbox span {
+    font-size: 20px;
+}
+
+.vacancydetailbigbox .vacancydetailleftbox .vacancydetaillefttopbox .vacancydetaillefttoprightbox strong {
+    color: rgba(84, 39, 254, 1);
+}
+
+.vacancydetailbigbox .vacancydetailleftbox h3 {
+    font-weight: normal;
+    font-size: 22px;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    cursor: default;
+}
+
+.vacancydetailbigbox .vacancydetailleftbox span {
+    margin-bottom: 20px;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    text-align: justify;
+    line-height: 25px;
+    color: grey;
+    cursor: default;
+}
+
+.vacancydetailbigbox .vacancydetailrightbox {
+    width: 25%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.vacancydetailbigbox .vacancydetailrightbox .vacancydetailrighttopbox {
+    width: 100%;
+}
+
+.vacancydetailbigbox .vacancydetailrightbox .vacancydetailrighttopbox button {
+    padding: 10px 35px;
+    background-color: rgba(84, 39, 254, 1);
+    color: white;
+    letter-spacing: 1.5px;
+    font-weight: bolder;
+    border: 1px solid rgba(84, 39, 254, 1);
+    outline: none;
+    transition: all .5s;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.vacancydetailbigbox .vacancydetailrightbox .vacancydetailrighttopbox button:hover {
+    background-color: white;
+    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.24);
+    color: rgba(84, 39, 254, 1);
+}
+
+.vacancydetailbigbox .vacancydetailrightbox .vacancydetailrightrow {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.vacancydetailbigbox .vacancydetailrightbox .vacancydetailrightrow .vacancydetailrightrowleft {
+    color: rgba(30, 166, 156, 1);
+    font-size: 22px;
+    margin-right: 20px;
+    cursor: default;
+}
+
+.vacancydetailbigbox .vacancydetailrightbox .vacancydetailrightrow .vacancydetailrightrowright h4 {
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    font-weight: normal;
+    margin-bottom: 7px;
+    cursor: default;
+}
+
+.vacancydetailbigbox .vacancydetailrightbox .vacancydetailrightrow .vacancydetailrightrowright span {
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    color: grey;
+    margin-bottom: 7px;
+    cursor: default;
+}
+
+@media (max-width: 1227px) {
+    .vacancydetailbigbox .vacancydetailleftbox {
+        width: 100%;
+    }
+
+    .vacancydetailbigbox .vacancydetailrightbox {
+        width: 100%;
+    }
+}
+
+/* Job detail section ends here. */
+
+/* Job application section starts here. */
+
+.jobappbox {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.rightbottomsmallsection .admintable .simple {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    color: black;
+}
+
+.rightbottomsmallsection .admintable .simple:hover {
+    background-color: white;
+    color: black;
+    text-decoration: underline;
+}
+
+/* Job application section ends here. */
+
+/* Change status section starts here. */
+
+.changestatussection {
+    width: 100%;
+    height: calc(100vh - 80px);
+    overflow-y: scroll;
+    background-color: rgba(233, 239, 237, 1);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    padding: 30px 10px;
+}
+
+.changestatusform {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 400px;
+}
+
+.changestatusform h3 {
+    width: 100%;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.changestatusform span {
+    font-size: 17px;
+    margin-bottom: 10px;
+    color: grey;
+}
+
+.changestatusform input, .changestatusform select {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border-color: rgba(0, 0, 0, 0.103);
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.changestatusform input:focus, .changestatusform select:focus {
+    border-color: rgb(86, 39, 254);
+} 
+
+.changestatusform button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    transition: all ease 0.5s;
+    margin-top: 10px;
+    border-color: rgba(0, 0, 0, 0.103);
+    border-radius: 5px;
+}
+
+.changestatusform button:hover {
+    background-color: rgb(86, 39, 254);
+    color: white;
+    border-color: rgb(86, 39, 254);
+}
+
+/* Change status section ends here. */
+
+/* Profile Information section starts here. */
+
+.profilebigbox {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    
+    justify-content: center;
+    padding: 80px 0;
+}
+
+.profilenav {
+    width: 300px;
+    height: 475px;
+    background-color: white;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.24);
+    margin: 0 15px;
+    margin-bottom: 50px;
+}
+
+.profilenav h3 {
+    margin: 10px;
+    font-size: 22px;
+}
+
+.profilenav h2 {
+    font-size: 22px;
+    text-align: center;
+    margin: 10px 0;
+    cursor: default;
+}
+
+.profilenav a {
+    font-size: 16px;
+    margin: 20px;
+    color: black;
+    transition: all 0.5s;
+}
+
+.profilenav a:hover {
+    scale: 0.95;
+}
+
+.profilenav .picon {
+    margin-right: 15px;
+}
+
+.profilebigbox .profilenav .pcurrent {
+    color: purple;
+}
+
+.profileinformation {
+    max-width: 800px;
+    min-width: 300px;
+    width: 70%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.24);
+    background-color: white;
+    margin: 0 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.profileinformation h2 {
+    background-color: rgb(26, 13, 77);
+    color: white;
+    padding: 15px 25px;
+    font-size: 17px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    cursor: default;
+}
+
+.profileinformation .profilerow {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.profilecolumn {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    min-width: 300px;
+    margin: 0 15px;
+    margin-bottom: 10px;
+}
+
+.profilecolumn span {
+    color: #313131b9;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    cursor: default;
+}
+
+.profilecolumn span strong {
+    color: rgba(255, 48, 107, 0.829);
+}
+
+.profilecolumn select, .profilecolumn input {
+    width: 100%;
+    height: 40px;
+    padding: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.185);
+    outline: none;
+}
+
+.profilecolumn select:focus, .profilecolumn input:focus {
+    border-color: rgba(128, 0, 128, 0.411);
+}
+
+.profileinformation h3{
+    width: 100%;
+    padding: 0 50px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: rgba(0, 0, 0, 0.603);
+    margin: 20px 0;
+    cursor: default;
+}
+
+.profilebigbox .profileinformation .specialrow {
+    display: flex;
+    padding: 0 50px;
+}
+
+.profilebigbox .profileinformation .profileaccept {
+    width: 100%;
+    display: flex;
+    padding: 0 65px;
+    margin: 20px 0;
+}
+
+.profilebigbox .profileinformation .profileaccept input {
+    margin-right: 10px;
+}
+
+.profilebigbox .profileinformation .profileaccept a {
+    text-decoration: underline;
+}
+
+.bottombuttom {
+    width: 100%;
+    display: flex;
+    padding: 0 65px;
+    margin: 10px 0 30px 0;
+}
+
+.bottombuttom button {
+    padding: 10px 20px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: white;
+    background-color: rgb(84, 39, 254);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.bottombuttom button:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.24);
+}
+
+@media (max-width:1130px) {
+    .profileinformation h3 {
+        text-align: center;
+    }
+
+    .profilebigbox .profileinformation .specialrow {
+        justify-content: center;
+    }
+
+    .profilebigbox .profileinformation .profileaccept {
+        justify-content: center;
+    }
+}
+
+/* Profile information section ends here. */
+
+/* education&certificate section starts here. */
+
+.educationcertificate {
+    max-width: 800px;
+    min-width: 300px;
+    width: 70%;
+    margin: 0 15px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.educationcertificate2 {
+    width: 500px;
+    min-width: 300px;
+    margin: 0 10px;
+}
+
+
+
+
+
+.educationcertificate .educationbigbox, .educationcertificate .certificatebigbox {
+    width: 100%;
+    min-width: 300px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.24);
+    background-color: white;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.educationcertificate .educationbigbox .educationtoprow, .educationcertificate .certificatebigbox .certificatetoprow {
+    width: 100%;
+    background-color: rgb(26, 13, 77);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+.educationcertificate .educationbigbox .educationtoprow h2, .educationcertificate .certificatebigbox .certificatetoprow h2 {
+    color: white;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    cursor: default;
+}
+
+.educationcertificate .educationbigbox .educationtoprow span, .educationcertificate .certificatebigbox .certificatetoprow span {
+    background-color: white;
+    padding: 5px 15px;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    
+}
+
+.educationcertificate .educationbigbox .educationtoprow span:hover , .educationcertificate .certificatebigbox .certificatetoprow span:hover {
+    transform: scale(0.95);
+}
+
+.educationcertificate table {
+    width: 100%;
+}
+
+.educationcertificate td, .educationcertificate th {
+    padding: 15px 5px;
+    text-align: center;
+    cursor: default;
+}
+
+.educationcertificateform {
+    position: fixed;
+    min-width: 300px;
+    width: 45%;
+    background-color: rgba(197, 197, 197, 0.473);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    margin: 0 auto;
+    top: 90px;
+    z-index: 19000;
+    flex-direction: column;
+    padding: 25px 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.24);
+    display: none;
+}
+
+.educationcertificateform .topdetail {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.educationcertificateform .topdetail h2 {
+    font-size: 25px;
+    cursor: default;
+}
+
+.educationcertificateform .topdetail span {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.educationcertificateform .topdetail span:hover{
+    color: purple;
+}
+
+.educationcertificateform span {
+    font-size: 17px;
+    margin-bottom: 7px;
+    color: #313131;
+}
+
+.educationcertificateform input, .educationcertificateform select{
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    margin-bottom: 7px;
+    font-size: 15px;
+}
+
+.educationcertificateform input:focus, .educationcertificateform select:focus {
+    border: 1px solid purple;
+}
+
+.educationcertificateform button {
+    padding: 8px 0;
+    background-color: rgb(84, 39, 254);
+    font-size: 20px;
+    margin-top: 10px;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.5;
+}
+
+.educationcertificateform button:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.24);
+}
+
+@media (max-width: 850px) {
+    .educationcertificate td, .educationcertificate th {
+        font-size: 10px;
+    }
+    
+}
+
+.certificateform {
+    position: fixed;
+    min-width: 300px;
+    width: 45%;
+    background-color: rgba(197, 197, 197, 0.473);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    margin: 0 auto;
+    top: 90px;
+    z-index: 19000;
+    display: none;
+    flex-direction: column;
+    padding: 25px 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.24);
+}
+
+.certificateform .topdetail {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.certificateform .topdetail h1 {
+    font-size: 25px;
+    cursor: default;
+}
+
+.certificateform .topdetail span {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.certificateform .topdetail span:hover{
+    color: purple;
+}
+
+.certificateform span {
+    font-size: 17px;
+    margin-bottom: 7px;
+    color: #313131;
+}
+
+.certificateform input, .certificateform select{
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    margin-bottom: 7px;
+    font-size: 15px;
+}
+
+.certificateform input:focus, .certificateform select:focus {
+    border: 1px solid purple;
+}
+
+.certificateform button {
+    padding: 8px 0;
+    background-color: rgb(84, 39, 254);
+    font-size: 20px;
+    margin-top: 10px;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.5;
+}
+
+.certificateform button:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.24);
+}
+
+/* education&certificate section ends here. */
+
+/* previous experience section starts here. */
+
+.currow {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+.currow input {
+    width: 30px;
+}
+
+/* previous experience section starts here. */
+
+/* Dynamic question section starts here. */
+
+.dynamicinformation {
+    /* max-width: 800px; */
+    min-width: 300px;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.24);
+    background-color: white;
+
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.dynamicinformation h2 {
+    background-color: rgb(26, 13, 77);
+    color: white;
+    padding: 15px 25px;
+    font-size: 17px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    cursor: default;
+}
+
+.dynamicinformation .dynamicrow {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.dynamiccolumn {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    min-width: 300px;
+    margin: 0 15px;
+    margin-bottom: 10px;
+}
+
+.dynamiccolumn span {
+    color: #313131b9;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    cursor: default;
+}
+
+.dynamiccolumn span strong {
+    color: rgba(255, 48, 107, 0.829);
+}
+
+.dynamiccolumn select, .dynamiccolumn input {
+    width: 100%;
+    height: 40px;
+    padding: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.185);
+    outline: none;
+}
+
+.dynamiccolumn select:focus, .dynamiccolumn input:focus {
+    border-color: rgba(128, 0, 128, 0.411);
+}
+
+.dynamicinformation h3{
+    width: 100%;
+    padding: 0 50px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: rgba(0, 0, 0, 0.603);
+    margin: 20px 0;
+    cursor: default;
+}
+
+.educationcertificate .dynamicinformation .specialrow {
+    display: flex;
+    padding: 0 50px;
+}
+
+.educationcertificate .dynamicinformation .dynamicaccept {
+    width: 100%;
+    display: flex;
+    padding: 0 65px;
+    margin: 20px 0;
+}
+
+.educationcertificate .dynamicinformation .dynamicaccept input {
+    margin-right: 10px;
+}
+
+.educationcertificate .dynamicinformation .dynamicaccept a {
+    text-decoration: underline;
+}
+
+.bottombuttom {
+    width: 100%;
+    display: flex;
+    padding: 0 65px;
+    margin: 10px 0 30px 0;
+}
+
+.bottombuttom button {
+    padding: 10px 20px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: white;
+    background-color: rgb(84, 39, 254);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.bottombuttom button:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.24);
+}
+
+@media (max-width:1130px) {
+    .dynamicinformation h3 {
+        text-align: center;
+    }
+
+    .educationcertificate .dynamicinformation .specialrow {
+        justify-content: center;
+    }
+
+    .educationcertificate .dynamicinformation .dynamicaccept {
+        justify-content: center;
+    }
+}
+
+/* Dynamic quesiton section ends here. */
+
+/* My Application section starts here. */
+
+.myapplicationbigbox {
+    width: 100%;
+    max-width: 1100px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.myapplicationbigbox .myapplicationcontainbox {
+    width: 90%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.24);
+}
+
+.myapplicationbigbox .myapplicationcontainbox h2 {
+    background-color: rgba(26, 13, 77, 1);
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.myapplicationbigbox .myapplicationcontainbox table th {
+    border-bottom: 1px solid grey;
+    padding-bottom: 10px;
+    cursor: default;
+}
+
+.myapplicationbigbox .myapplicationcontainbox table td {
+    padding: 10px 0;
+    cursor: default;
+    text-align: center;
+}
+
+.myapplicationbigbox .myapplicationcontainbox table td a {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 5px 10px;
+    color: black;
+    border-radius: 5px;
+    transition: all ease 0.5s;
+}
+
+.myapplicationbigbox .myapplicationcontainbox table td a:hover {
+    background-color: rgb(84, 39, 254);
+    color: white;
+}
+
+@media (max-width: 670px) {
+    .myapplicationbigbox .myapplicationcontainbox table th {
+        font-size: 12px;
+    }
+
+    .myapplicationbigbox .myapplicationcontainbox table td {
+        font-size: 12px;
+    }
+
+    .myapplicationbigbox .myapplicationcontainbox {
+        width: 100%;
+    }
+
+    .myapplicationbigbox {
+        padding: 80px 20px;
+    }
+
+    .myapplicationbigbox .myapplicationcontainbox h2 {
+        font-size: 18px;
+    }
+}
+
+/* My Application section ends here. */
+
+/* Login section starts here. */
+
+.loginbigbox {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginbox {
+    min-width: 300px;
+    max-width: 500px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.loginbox h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    cursor: default;
+}
+
+.loginbox h2 span {
+    color: purple;
+    font-size: 26px;
+}
+
+.loginbox span {
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: grey;
+    cursor: default;
+}
+
+.loginbox input {
+    width: 100%;
+    padding: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+.loginbox input:focus {
+    box-shadow: 0 0 10px rgba(128, 0, 128, 0.377);
+}
+
+.loginbox button {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    outline: none;
+    background-color: rgb(84, 39, 254);
+    color: white;
+    font-size: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: all ease 0.5s;
+    cursor: pointer;
+}
+
+.loginbox button:hover {
+    transform: scale(0.95);
+}
+
+/* Login section ends here. */
